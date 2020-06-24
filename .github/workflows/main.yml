@@ -1,13 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy on Surge
+name: Deploy to Surge
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
     branches: [ master ]
-
+ 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,17 +20,15 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    
-    # Install Node js
-    - name: Install Node js
+
+    # Install Node Js on System
+    - name: Install Node Js
       uses: actions/setup-node@v2-beta
       with:
-         node-version: 12
-         
-   # Install Surge
+        node-version: 12
+        
     - name: Install Surge
-      uses: npm install -g surge
+      run: npm install -g surge
       
-   # Run Surge
     - name: Run Surge
-      uses: surge ./ explore-matiari.surge.sh --token ${{secrets.THE_TOKEN}}
+      run: surge ./ explore-matiari.surge.sh --token ${{secrets.THE_TOKEN}}

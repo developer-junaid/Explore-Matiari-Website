@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy React Site
+name: Deploy Site
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the development branch
@@ -26,13 +26,6 @@ jobs:
       with: 
         node-version: 12
         
-        
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
-      
-    - name: Build React App
-      run: yarn build
       
     - name: Install Surge
       run: npm install --global surge

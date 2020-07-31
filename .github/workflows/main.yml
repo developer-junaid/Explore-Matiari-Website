@@ -31,4 +31,4 @@ jobs:
       run: npm install --global surge
     
     - name: Deploy to surge
-      run: surge ./build explore-matiari.surge.sh/ --token ${{ secrets.THE_TOKEN }}
+      run: surge explore-matiari.surge.sh/ --token ${{ secrets.THE_TOKEN }}

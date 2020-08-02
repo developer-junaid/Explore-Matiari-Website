@@ -26,9 +26,8 @@ jobs:
       with: 
         node-version: 12
         
-      
     - name: Install Surge
-      run: npm install --global surge
+      run: npm install --g surge
     
     - name: Deploy to surge
-      run: surge explore-matiari.surge.sh/ --token ${{ secrets.THE_TOKEN }}
+      run: surge ./ explore-matiari.surge.sh --token ${{secrets.THE_TOKEN }}
